@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ClientOfficeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::apiResource('clients.offices', ClientOfficeController::class)
     ->only('index')->scoped(['client' => 'email']);
+
+Route::put('users', [UserController::class, 'updateOrCreate']);
